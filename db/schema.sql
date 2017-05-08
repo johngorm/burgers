@@ -5,7 +5,7 @@ use burgers_db;
 CREATE TABLE IF NOT EXISTS burgers(
 	id INTEGER AUTO_INCREMENT NOT NULL,
     burger_name VARCHAR(80) NOT NULL,
-    devoured BOOL null,
+    devoured BOOL DEFAULT FALSE,
     data timestamp,
     primary key(id)
 );
