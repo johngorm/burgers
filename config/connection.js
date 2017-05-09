@@ -1,22 +1,16 @@
-const mysql = require('mysql');
+// Dependencies
+var Sequelize = require("sequelize");
 
-//May need to set dateStrings to TRUE to get TIMESTAMP back as string
-let connection = mysql.createConnection({
-	port: 3306,
-	host: 'localhost',
-	user: 'root',
-	password: '',
-	database: 'burgers_db'
+// Creates mySQL connection using Sequelize
+var sequelize = new Sequelize("burger", "root", "", {
+  host: "localhost",
+  dialect: "mysql",
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  }
 });
 
-connection.connect(function(err){
-	if(err){
-		console.log('Error connecting to database');
-		throw err;
-	}
-	else{
-		console.log('Connection to database established');
-	}
-});
-
-module.exports = connection;
+// Exports the connection for other files to use
+module.exports = sequelize;
