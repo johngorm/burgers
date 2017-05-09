@@ -1,14 +1,19 @@
 const router = require('express').Router();
 
 
-var Burger = require("../model/burger.js");
+var Burger = require("../models/burger.js");
 
 //Get 
-router.get('/', function(req, res){
-	Burger.findAll({})
-		.then(function(result){
-			res.json(result);
-		})
-});
+// router.get('/', function(req, res){
+// 	Burger.findAll({})
+// 		.then(function(result){
+// 			res.json(result);
+// 		});
+// });
+
+Burger.findAll({})
+	.then(function(result){
+		console.log(JSON.stringify(result));
+	})
 
 
