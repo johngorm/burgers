@@ -1,7 +1,7 @@
 //Dependncies
 const Sequelize = require('sequelize');
 
-const sequelize_connect = require('./config/connection.js');
+const sequelize_connect = require('../config/connection.js');
 
 let Burger = sequelize_connect.define('burger',{
 	burger_name:{
