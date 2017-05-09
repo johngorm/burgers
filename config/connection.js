@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 
+//May need to set dateStrings to TRUE to get TIMESTAMP back as string
 let connection = mysql.createConnection({
 	port: 3306,
 	host: 'localhost',
