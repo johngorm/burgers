@@ -6,8 +6,9 @@ var Burger = require("../models/burger.js");
 
 router.get('/', function(req, res){
 	Burger.findAll({})
-	.success( function(result){
+	.then( function(result){
 		console.log(result);
+		res.render('index', result);
 	});
 });
 
@@ -15,7 +16,7 @@ router.get('/', function(req, res){
 router.post('/', function(req, res){
 
 	Burger.create({ burger_name : req.body.burger_name})
-		.success(function(result){
+		.then(function(result){
 			console.log(result)
 			res.redirect('/');
 		});
