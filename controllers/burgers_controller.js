@@ -7,8 +7,10 @@ var Burger = require("../models/burger.js");
 router.get('/', function(req, res){
 	Burger.findAll({})
 	.then( function(result){
-		console.log(result);
-		res.render('index', result);
+		let dbRecordsObject = {
+			burgers: result
+		};
+		res.render('index', dbRecordsObject);
 	});
 });
 
