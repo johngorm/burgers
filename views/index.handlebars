@@ -3,51 +3,54 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class='burger-list col-md-3 offset-md-3'>
+		<div class='burger-list col-md-4 offset-md-1'>
 			<h3>Burger Ready to Eat!</h3>
 			<ul>
 				{{#each burgers}}
 					{{#unless this.devoured}}
 						<li>
-							{{id}}. {{burger_name}}
-
 							<form action="/{{id}}?_method=PUT" method='POST'>
+								{{id}}. {{burger_name}}
+							
 								{{!-- <input type="hidden" name='devour' value="true"> --}}
-								Date: {{createdAt}}
-								<button type="submit">EAT!</button>
+								{{!-- Date: {{createdAt}} --}}
+								<button class='btn btn-md' type="submit">EAT!</button>
 							</form>
-
+							
 						</li>
+						<br>
 					{{/unless}}
 				{{/each}}
 			</ul>
+				
 		</div>
 
-		<div class='burger-list col-md-3'>
-			<h3>Burger Already Eaten!</h3>
-			<ul>
+		<div class='burger-list col-md-4 offset-md-2'>
+			<h3>Eaten!</h3>
+			
 				{{#each burgers}}
 					{{#if this.devoured}}
-						<li>
-							<input type='text' name='name' placeholder='{{id}}. {{burger_name}}' readonly>
-						</li>
+						
+							<input type='text' name='name' size='30'
+							placeholder='{{id}}. {{burger_name}}'disabled readonly></input>
+					
 					{{/if}}
 				{{/each}}
-			</ul>
+			
 		</div>
 	</div>
 
 	<br>
 
 	<div class='row'>
-		<div class='col-md-4 offset-md-4'>
+		<div class='submit-form col-md-4 offset-md-4'>
 			<h2>Create a new burger!</h2>
 			<form class='create-update-form' action='/' method='POST'>
 				<div class='form-group'>
 					<label for='burg'>Burger Name:</label>
 					<input type='text' id='burg' name='burger_name'>
 				</div>
-				<button type='submit'>Make Da' Burger</button>
+				<button class='btn btn-lg' type='submit'>Make Da' Burger</button>
 			</form>
 		</div>
 	</div>
