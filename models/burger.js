@@ -8,13 +8,9 @@ let Burger = sequelize_connect.define('burger',{
 		type: Sequelize.STRING
 	},
 	devoured:{
-		type: Sequelize.BOOLEAN
+		type: Sequelize.BOOLEAN,
+		defaultValue: false
 	},
-	date:{
-		type: Sequelize.DATE
-	}
-}, {
-	timestamps: false
 });
 
 Burger.sync();
