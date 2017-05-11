@@ -1,0 +1,57 @@
+<div class="jumbotron">
+	<h1>Eat Da' Burger</h1>	
+</div>
+<div class="container">
+	<div class="row">
+		<div class='burger-list col-md-4 offset-md-1'>
+			<h3>Burger Ready to Eat!</h3>
+			<ul>
+				{{#each burgers}}
+					{{#unless this.devoured}}
+						<li>
+							<form action="/{{id}}?_method=PUT" method='POST'>
+								{{id}}. {{burger_name}}
+							
+								{{!-- <input type="hidden" name='devour' value="true"> --}}
+								{{!-- Date: {{createdAt}} --}}
+								<button class='btn btn-md' type="submit">EAT!</button>
+							</form>
+							
+						</li>
+						<br>
+					{{/unless}}
+				{{/each}}
+			</ul>
+				
+		</div>
+
+		<div class='burger-list col-md-4 offset-md-2'>
+			<h3>Eaten!</h3>
+			
+				{{#each burgers}}
+					{{#if this.devoured}}
+						
+							<input type='text' name='name' size='30'
+							placeholder='{{id}}. {{burger_name}}'disabled readonly></input>
+					
+					{{/if}}
+				{{/each}}
+			
+		</div>
+	</div>
+
+	<br>
+
+	<div class='row'>
+		<div class='submit-form col-md-4 offset-md-4'>
+			<h2>Create a new burger!</h2>
+			<form class='create-update-form' action='/' method='POST'>
+				<div class='form-group'>
+					<label for='burg'>Burger Name:</label>
+					<input type='text' id='burg' name='burger_name'>
+				</div>
+				<button class='btn btn-lg' type='submit'>Make Da' Burger</button>
+			</form>
+		</div>
+	</div>
+</div>

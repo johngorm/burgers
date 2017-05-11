@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
+
+html{
+	background-image: url("../img/burger_sign.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+
+}
+
+body{
+	background: none;
+	text-align: center;
+	text-decoration: blink;
+}
+
+h1,h2, h3{
+	font-family: 'Pacifico', cursive;
+}
+
+h1{
+	
+	color: #f8fcfc;
+	font-size: 5em;
+}
+
+
+.jumbotron{
+	background: none;
+	text-shadow: 0px 0px 50px #c6d3d2,0px 0px 90px #5f9ea1;
+}
+
+
+
+.burger-list, .submit-form{
+	background: rgba(255,255,255, 0.75);
+	border-radius: 4px;
+	margin-bottom: 4%;
+}
+
+.burger-list{
+	
+	margin-top: 4%;
+}
+
+input{
+	margin-bottom: 5px;
+	border: 2px solid black;
+}
+
+ul{
+	list-style: none;
+	padding: 0px
+}
+
+
+li{
+	background-color: rgb(239,227,194);
+	border: 2px solid black;
+	border-radius: 4px;
+	font-family: 'Pacifico', cursive;
+	font-size: 22px;
+	justify-content: center;
+}
+
+label{
+	font-size: 21px;
+	font-family: 'Open Sans', sans-serif; 
+}
+
+
+.btn{
+	background: #de7f33;
+	margin-bottom: 3%;
+	margin-top: 2%;
+	align-content: right;
+	font-family: 'Open Sans', sans-serif; 
+}
+
+
