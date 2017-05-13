@@ -1,16 +1,7 @@
 // Dependencies
 var Sequelize = require("sequelize");
+const config = require('./config.js');
 
-// Creates mySQL connection using Sequelize
-var sequelize = new Sequelize("burgers_db", "root", "", {
-  host: "localhost",
-  dialect: "mysql",
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  }
-});
+// Creates mySQL connection using Sequelize and export
+module.exports = new Sequelize(config);
 
-// Exports the connection for other files to use
-module.exports = sequelize;
