@@ -21,6 +21,9 @@ router.post('/', function(req, res){
 		burger_name : req.body.burger_name
 	}).then(function(result){
 		res.redirect('/');
+	}).catch( function(err){
+		console.error(err.message);
+		res.redirect('/');
 	});
 });
 //route to change burger status "devoured" to true
@@ -33,6 +36,9 @@ router.put('/:id', function(req, res){
 			id: req.params.id
 		}
 	}).spread(function(result, affectedRows){
+		res.redirect('/');
+	}).catch( function(err){
+		console.error(err);
 		res.redirect('/');
 	});
 });
